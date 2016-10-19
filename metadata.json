@@ -8,7 +8,9 @@
   "project_page": "https://github.com/bmohanty6/windows_mysql",
   "issues_url": "https://github.com/bmohanty6/windows_mysql/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-powershell","version_requirement":">= 1.0.6"},
+    {"name":"badgerious-windows_env","version_requirement":">= 2.2.2"}
   ],
   "data_provider": null
 }
