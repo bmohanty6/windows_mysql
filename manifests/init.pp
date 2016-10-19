@@ -1,5 +1,3 @@
-# Class: windows_mysql
-# ===========================
 #
 # Full description of class windows_mysql here.
 #
@@ -43,6 +41,26 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class windows_mysql {
+  $mysql_home = "C:\Program Files\MySQL",
+  $mysql_package = "mysql",
+  $mysql_msi = "mysql-5.5.53-winx64.msi",
+  $workbench_package = "mysql-workbench-community",
+  $workbench_msi = "mysql-workbench-community-6.3.7-winx64.msi"
+){
 
+  file { $mysql_home :
+    ensure => 'directory',
+  }
 
+  class { 'windows_mysql::install_mysql' :
+    mysql_home => $mysql_home,
+    package_name => $mysql_package,
+    mysql_msi => $mysql_msi
+  }
+
+  class { 'windows_mysql::install_mysql_workbench' :
+    mysql_home => $mysql_home,
+    package_name => $workbench_package,
+    workbench_msi => $workbench_msi
+  }
 }
